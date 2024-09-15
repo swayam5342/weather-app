@@ -1,0 +1,72 @@
+/* Dark Mode Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2e2e2e;
+    color: #ffffff;
+    text-align: center;
+    padding: 50px;
+}
+
+/* Container */
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #3e3e3e;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Form and Input Fields */
+form {
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 10px 20px;
+    width: 80%;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    background-color: #555;
+    color: #fff;
+}
+
+input[type="text"]::placeholder {
+    color: #ccc;
+}
+
+/* Get Weather Button Styling */
+button {
+    margin: 5px;
+    padding: 10px 20px; /* Add padding for a better look */
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+/* Weather Result Section */
+#weatherResult {
+    margin-top: 20px;
+    background-color: #4e4e4e;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Link Styling */
+a {
+    color: #5cb85c;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
