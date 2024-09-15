@@ -1,72 +1,112 @@
-/* Dark Mode Styling */
-body {
-    font-family: Arial, sans-serif;
+/* Main container for the weather card */
+.weather-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     background-color: #2e2e2e;
-    color: #ffffff;
+}
+
+/* Search box styling */
+.search-box {
+    position: absolute;
+    top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-box input {
+    padding: 15px;
+    width: 250px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+}
+
+.search-box button {
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    cursor: pointer;
+    outline: none;
+    transition: 0.3s;
+}
+
+.search-box button:hover {
+    background-color: #f0f0f0;
+}
+
+/* Styling for the weather card */
+.weather-card {
+    width: 300px;
+    padding: 30px;
+    background: linear-gradient(135deg, #76b3fc, #6f86d6);
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     text-align: center;
-    padding: 50px;
+    color: white;
 }
 
-/* Container */
-.container {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #3e3e3e;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-}
-
-/* Form and Input Fields */
-form {
+/* Weather icon styling */
+.weather-icon {
+    width: 80px;
     margin-bottom: 20px;
 }
 
-input[type="text"] {
-    padding: 10px 20px;
-    width: 80%;
-    margin: 5px;
-    border-radius: 5px;
-    border: 1px solid #555;
-    background-color: #555;
-    color: #fff;
+/* Temperature and city name */
+h2 {
+    font-size: 48px;
+    margin: 0;
 }
 
-input[type="text"]::placeholder {
-    color: #ccc;
+h3 {
+    font-size: 24px;
+    margin: 5px 0 20px 0;
 }
 
-/* Get Weather Button Styling */
-button {
-    margin: 5px;
-    padding: 10px 20px; /* Add padding for a better look */
-    background-color: #5cb85c;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #4cae4c;
-}
-
-/* Weather Result Section */
-#weatherResult {
+/* Humidity and Wind Speed details */
+.weather-info {
+    display: flex;
+    justify-content: space-between;
     margin-top: 20px;
-    background-color: #4e4e4e;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Link Styling */
-a {
-    color: #5cb85c;
-    text-decoration: none;
+.weather-info div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-a:hover {
-    text-decoration: underline;
+.weather-info i {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.weather-info p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .weather-card {
+        width: 250px;
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    .weather-info i {
+        font-size: 20px;
+    }
 }

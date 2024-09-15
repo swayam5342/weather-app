@@ -1,15 +1,13 @@
-from flask import Flask, render_template, jsonify, request
+from flask import Flask, render_template, request, jsonify
 import requests
-from  dotenv import load_dotenv
 import os
+from dotenv import load_dotenv
 
 load_dotenv()
 
-
 app = Flask(__name__)
 
-# Replace with your WeatherAPI key
-API_KEY = os.getenv('API_KEY')
+WEATHER_API_KEY = os.getenv('API_KEY')
 
 @app.route('/')
 def index():
@@ -17,13 +15,19 @@ def index():
 
 @app.route('/get_weather', methods=['POST'])
 def get_weather():
-    city = request.json['city']
-    url = f'http://api.weatherapi.com/v1/current.json?key={API_KEY}&q={city}&aqi=no'
-    response = requests.get(url)
-    if response.status_code == 200:
-        return jsonify(response.json())
-    else:
-        return jsonify({'error': 'City not found'}), 404
+    data = request.get_json()
+    city = data.get('city')
+
+    if city:
+        url = f"http://api.weatherapi.com/v1/current.json?key={WEATHER_API_KEY}&q={city}"
+        response = requests.get(url)
+
+        if response.status_code == 200:
+            weather_data = response.json()
+            return jsonify(weather_data)
+        else:
+            return jsonify({"error": "City not found"}), 404
+    return jsonify({"error": "Invalid request"}), 400
 
 if __name__ == '__main__':
     app.run(debug=True)

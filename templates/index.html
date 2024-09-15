@@ -4,17 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <title>Weather App - Dark Mode</title>
+    <title>Weather App</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Weather App</h1>
-        <form id="weatherForm">
-            <input type="text" id="cityInput" placeholder="Enter city name" required>
-            <button type="submit">Get Weather</button>
-        </form>
-        <div id="weatherResult"></div>
+    <div class="weather-container">
+        <div class="search-box">
+            <input type="text" id="cityInput" placeholder="Enter city name">
+            <button id="searchBtn"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="weather-card">
+            <img class="weather-icon" id="weatherIcon" src="" alt="Weather Icon">
+            <h2 id="temperature">--°C</h2>
+            <h3 id="cityName">City Name</h3>
+            <div class="weather-info">
+                <div class="humidity">
+                    <i class="fas fa-water"></i>
+                    <span id="humidity">--%</span>
+                    <p>Humidity</p>
+                </div>
+                <div class="wind">
+                    <i class="fas fa-wind"></i>
+                    <span id="windSpeed">-- km/h</span>
+                    <p>Wind Speed</p>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </body>
 </html>
