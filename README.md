@@ -64,7 +64,7 @@ Before running the app, ensure you have the following installed:
 
 ### Dark Mode Interface
 
-![Dark Mode Screenshot](screenshot.png)
+![Dark Mode Screenshot](/images/image.png)
 
 ## Technologies Used
 
