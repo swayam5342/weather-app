@@ -30,18 +30,13 @@ Before running the app, ensure you have the following installed:
     pip install -r requirements.txt
     ```
 
-    **Note**: If you don't have a `requirements.txt`, you can generate one by running:
-
-    ```bash
-    pip freeze > requirements.txt
-    ```
 
 4. **Set up your WeatherAPI key**:
 
     - Create a `.env` file in the root directory and add your WeatherAPI key:
 
     ```
-    WEATHER_API_KEY=your_weatherapi_key
+    API_KEY=your_weatherapi_key
     ```
 
 5. **Run the Flask app**:
