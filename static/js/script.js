@@ -1,6 +1,5 @@
 document.getElementById('searchBtn').addEventListener('click', async function () {
     const city = document.getElementById('cityInput').value;
-
     if (city) {
         const response = await fetch('/get_weather', {
             method: 'POST',
@@ -9,9 +8,7 @@ document.getElementById('searchBtn').addEventListener('click', async function ()
             },
             body: JSON.stringify({ city }),
         });
-
         const data = await response.json();
-
         if (response.ok) {
             document.getElementById('weatherIcon').src = data.current.condition.icon;
             document.getElementById('temperature').textContent = `${data.current.temp_c}°C`;

@@ -8,6 +8,8 @@ load_dotenv()
 app = Flask(__name__)
 
 WEATHER_API_KEY = os.getenv('API_KEY')
+HOST=os.getenv('host')
+PORT=os.getenv('PORT')
 
 @app.route('/')
 def index():
@@ -30,4 +32,4 @@ def get_weather():
     return jsonify({"error": "Invalid request"}), 400
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host=HOST,port=PORT,debug=True)
